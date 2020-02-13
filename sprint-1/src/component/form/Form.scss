@@ -1,0 +1,13 @@
+.form{
+    &__input{
+        height:90px;
+        width:260px;
+        resize:none;
+    }
+
+    &__img{
+        width:3rem;
+        height:3rem;
+        border-radius:50%;
+    }
+}

@@ -5,15 +5,18 @@ import './CommentChild.scss';
 
 export class CommentChild extends Component{
     render(){
-        console.log(this.props.comments)
         return this.props.comments.map((comment)=>(
-           <div className='commentChild'> 
+           <section className='commentChild'> 
                 <img className='commentChild__img' src={dogPic}/>
+                <div className = 'commentChild__containerParent'>
+                <div className= 'commentChild__containerChild'>
                 <p className='commentChild__name'>{comment.name}</p>
-                <p className='commentChild_timestamp'>{comment.timestamp}</p>
+                <p className='commentChild__date'>{comment.timestamp}</p>
+                </div>
                 <p className='commentChild__comment'>{comment.comment}</p>
+                </div>
                 
-            </div>
+            </section>
         ))
     }
 }

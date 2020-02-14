@@ -1,18 +1,30 @@
 .videolist{
     display:flex;
     height:70px;
-    padding-bottom:24px;
+    margin:0 1rem 1.5rem 1rem;
+    
+    &__img{
+        width:120px;
+        border-radius:4px;
+    }
     &__container{
         display:flex;
         flex-direction:column;
-    }
-    &__img{
-        width:120px;
+        justify-content: space-between;
+        margin-left:1rem;
+        margin-bottom:0.5rem;
     }
     &__title{
-        
+        font-weight:bold;
+        font-size:14px;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        display:-webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
     &__author{
+        font-size:13px;
 
     }
 }

@@ -1,13 +1,46 @@
 .form{
-    &__input{
-        height:90px;
-        width:260px;
-        resize:none;
+    display:flex;
+    flex-direction:column;
+    padding-bottom:1.5rem;
+    margin-left:1rem;
+    margin-right:1rem;
+    &__total{
+        margin-bottom: 2rem;
+        font-weight:bold;
+    }
+    &__container{
+        display:flex;
     }
 
     &__img{
         width:3rem;
         height:3rem;
         border-radius:50%;
+    }
+    &__form{
+        display:flex;
+        flex-direction: column;
+        width:100%;
+        margin-left:1rem;
+    }
+    &__title{
+        color:#afafaf;
+    }
+
+    &__input{
+        height:6rem;
+        resize:none;
+        border-radius:4px;
+        border:#0095FF solid 2px;
+        padding:1rem
+    }
+    &__button{
+        margin-top:1rem;
+        color:white;
+        border-radius: 4px;
+        background-color:#0095FF ;
+        outline:none;
+        border:none;
+        height:3rem;
     }
 }

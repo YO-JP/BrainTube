@@ -13,6 +13,7 @@
         margin-right:1.5rem;
     }
     @include desktop-view{
+        border-top:none;
         border-bottom: $lightgrey solid 2px;
     }
     &__img{

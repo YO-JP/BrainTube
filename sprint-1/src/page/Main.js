@@ -103,7 +103,7 @@ class Main extends React.Component {
         <Header />
         <Videoplayer mainVideo={this.state.mainVideo}/>
         <div className='desktop__viewParent'>
-          <div>
+          <div className ='desktop__viewChildOne'>
             <Description mainVideo={this.state.mainVideo} />
             <Form mainVideo={this.state.mainVideo} />
             <CommentChild mainVideo={this.state.mainVideo}/>

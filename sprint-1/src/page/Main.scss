@@ -17,3 +17,9 @@
     margin:0 11.25rem;
     }
 }
+
+.desktop__viewChildOne{
+    @include desktop-view{
+        padding-bottom:1rem;
+    }
+}

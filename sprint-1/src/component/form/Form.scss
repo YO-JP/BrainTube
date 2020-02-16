@@ -53,6 +53,8 @@
         border: $mainblue solid 2px;
         padding:1rem;
         width:100%;
+        resize:none;
+        overflow:hidden;
         @include tablet-view{
             height:3rem;
         }

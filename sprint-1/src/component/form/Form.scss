@@ -1,46 +1,70 @@
+@import '../.././styles/mixins';
+
 .form{
     display:flex;
     flex-direction:column;
     padding-bottom:1.5rem;
     margin-left:1rem;
     margin-right:1rem;
+    @include tablet-view{
+        margin-left:1.5rem;
+        margin-right:1.5rem;
+    }
     &__total{
         margin-bottom: 2rem;
-        font-weight:bold;
+        font-family:'Avenir-demi'
     }
     &__container{
         display:flex;
+    }
+    &__container--two{
+        @include tablet-view{
+            width:100%;
+        }
     }
 
     &__img{
         width:3rem;
         height:3rem;
         border-radius:50%;
+        margin-top:1rem;
     }
     &__form{
         display:flex;
         flex-direction: column;
         width:100%;
         margin-left:1rem;
+        @include tablet-view{
+            flex-direction:row;
+            justify-content: flex-end;
+            margin-right:2.5rem;
+        }
     }
     &__title{
-        color:#afafaf;
+        color:$darkgrey;
     }
 
     &__input{
         height:6rem;
-        resize:none;
         border-radius:4px;
-        border:#0095FF solid 2px;
-        padding:1rem
+        border: $mainblue solid 2px;
+        padding:1rem;
+        width:100%;
+        @include tablet-view{
+            height:3rem;
+        }
     }
     &__button{
         margin-top:1rem;
         color:white;
         border-radius: 4px;
-        background-color:#0095FF ;
+        background-color:$mainblue ;
         outline:none;
         border:none;
         height:3rem;
+        @include tablet-view{
+            width:10rem;
+            margin-left:1rem;
+        }
     }
 }

@@ -1,7 +1,19 @@
+@import '.././styles/mixins';
+
 .videolist__top{
     font-size:14px;
     color:#afafaf;
     margin:0 1rem 2.5rem 1rem;
     padding-top:2.5rem;
     border-top:#e1e1e1 2px solid;
+    @include desktop-view{
+        border-top:none;
+    }
+}
+
+.desktop__viewParent{
+    @include desktop-view{
+    display:flex;
+    margin:0 11.25rem;
+    }
 }

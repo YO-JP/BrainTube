@@ -1,48 +1,90 @@
+@import '../.././styles/mixins';
+
 .header{
         display:flex;
         flex-direction: column;
         margin:0 1rem 1rem 1rem;
         height:10.5rem;
+        @include tablet-view{
+            flex-direction: row;
+            margin:0;
+            padding:1rem 1.5rem 1rem 1.5rem;
+            height:5rem;
+        }
+        @include desktop-view{
+            padding:1rem 11.25rem;
+        }
     &__logo{
         height:3rem;
         align-self:center;
+        @include tablet-view{
+            width:20rem;
+            margin-right:10rem;
+        }
+        @include desktop-view{
+            width:30rem;
+            margin-right: 31rem;
+        }
     }
     &__search{
         width:100%;
         height:3rem;
         text-indent:3rem;
         border-radius:4px;
-        border: 1px solid #E1E1E1;
+        border: 1.2px solid $lightgrey;
         outline:none;
         background-image: url('../.././assets/Icons/SVG/Icon-search.svg');
         background-position: 1rem .75rem;
         background-repeat: no-repeat;
+        @include tablet-view{
+            align-self:center;
+        }
     }
     &__container{
         display:flex;
         margin-top:.5rem;
         justify-content: space-between;
+        @include tablet-view{
+            justify-content: flex-end;
+            margin-top:0;
+            
+        }
     }
     &__button{
         display:flex;
         justify-content: center;
         width:100%;
         margin-right:1rem;
-        background-color:#0095FF;
+        background-color:$mainblue;
         color:white;
         border-radius:4px;
         outline:none;
         border:none;
+        @include tablet-view{
+            align-self: center;
+            width:8rem;
+            height:3rem;
+            margin-left:1.5rem;
+            margin-right:1.5rem;    
+        }
+        @include desktop-view{
+            width:6.5rem;
+        }
         &--icon{
             padding-right:1rem;
         }
         &:hover{
-            background-color: #0065AD;
+            background-color: $darkblue;
         }
     }
     &__img{
         width:3.5rem;
         height:3.5rem;
         border-radius: 50%;
+        @include tablet-view{
+            align-self: center;
+            width:3rem;
+            height:3rem;
+        }
     }
 }

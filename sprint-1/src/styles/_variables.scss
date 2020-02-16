@@ -1,0 +1,23 @@
+@font-face{
+    font-family:'Avenir-reg';
+    src:url(".././assets/Font/AvenirNextProLT/Linotype-regular.otf");
+}
+@font-face{
+    font-family:'Avenir-demi';
+    src:url(".././assets/Font/AvenirNextProLT/Linotype-demi.otf");
+}
+@font-face{
+    font-family:'Avenir-bold';
+    src:url(".././assets/Font/AvenirNextProLT/Linotype-bold.otf");
+}
+
+$tablet:768px;
+$desktop:1440px;
+$mobile:767px;
+
+//colors
+$mainblue: #0095FF;
+$darkblue: #0065AD;
+$darkgrey: #afafaf;
+$lightgrey: #E1E1E1;
+$black: #323232;

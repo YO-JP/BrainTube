@@ -1,11 +1,10 @@
-@font-face{
-    font-family: 'Avenir';
-    src: url(./assets/Font/AvenirNextProLT/Linotype-regular);
-}
+@import '/styles/_mixins';
 
 *{
     margin:0;
     padding:0;
     font-family: 'Avenir';
     box-sizing: border-box;
+    line-height:1.5;
+    font-family:'Avenir-reg'
 }

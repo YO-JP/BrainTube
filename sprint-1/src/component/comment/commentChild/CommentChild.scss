@@ -1,10 +1,20 @@
+@import '../../.././styles/_mixins.scss';
+
 .commentChild{
     display:flex;
     margin-left:1rem;
     margin-right:1rem;
     padding-top:1.5rem;
     padding-bottom:1rem;
-    border-top: #e1e1e1 solid 2px;
+    border-top: $lightgrey solid 2px;
+    @include tablet-view{
+        padding-right:2.5rem;
+        margin-left:1.5rem;
+        margin-right:1.5rem;
+    }
+    @include desktop-view{
+        border-bottom: $lightgrey solid 2px;
+    }
     &__img{
         width:2.5rem;
         height:2.5rem;
@@ -19,17 +29,26 @@
     &__containerChild{
         display:flex;
         justify-content: space-between;
+        @include tablet-view{
+            justify-content: flex-start;
+        }
     }
     &__name{
-        font-weight:bold;
+        font-family:'Avenir-demi';
         font-size:14px;
     }
     &__date{
-        color:#afafaf;
         font-size:14px;
+        color:$darkgrey;
+        @include tablet-view{
+            margin-left:1rem;
+        }
     }
     &__comment{
         margin-top:1rem;
         font-size:13px;
+        @include tablet-view{
+            font-size:14px;
+        }
     }
 }

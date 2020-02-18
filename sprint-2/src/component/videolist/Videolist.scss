@@ -1,0 +1,39 @@
+@import '../.././styles/mixins';
+
+.videolist{
+    display:flex;
+    height:70px;
+    margin:0 1rem 1.5rem 1rem;
+    @include tablet-view{
+        margin:0 1.5rem 1.5rem 1.5rem;
+    }
+    
+    &__img{
+        width:120px;
+        border-radius:4px;
+    }
+    &__container{
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
+        margin-left:1rem;
+        margin-bottom:0.5rem;
+        @include tablet-view{
+            width: 12rem;
+            font-size:2rem;
+        }
+    }
+    &__title{
+        font-family:'Avenir-demi';
+        font-size:14px;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        display:-webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    &__author{
+        font-size:13px;
+
+    }
+}

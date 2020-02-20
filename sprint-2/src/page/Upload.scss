@@ -1,0 +1,138 @@
+@import '.././styles/mixins';
+
+.upload{
+    padding:0 1rem;
+    display:flex;
+    flex-direction:column;
+    @include tablet-view{
+        padding:3rem 1.5rem;
+        border-top: 1px $lightgrey solid;
+    }
+    @include desktop-view{
+        padding:3rem 11.25rem;
+    }
+    &__containerLarge{
+        display:flex;
+        flex-direction:column;
+        @include desktop-view{
+            flex-direction: row;
+            border-bottom: 2px $lightgrey solid;
+        }
+    }
+    &__topContainer{
+        display:flex;
+        flex-direction:column;
+        @include desktop-view{
+            margin-right:1.5rem;
+        }
+    }
+    &__title{
+        font-family:'Avenir-bold';
+        margin-bottom:2rem;
+        @include tablet-view{
+            font-size:2rem;
+            padding-bottom:2rem;
+            border-bottom:2px $lightgrey solid;
+            margin-bottom:2.5rem;
+        }
+    }
+    &__label{
+        font-size:12px;
+        color:$darkgrey;
+        font-family:'Avenir-demi';
+        @include tablet-view{
+            font-size:14px;
+        }
+    }
+    &__img{
+        width:100%;
+        margin-bottom:2rem;
+        border-radius:4px;
+        @include tablet-view{
+            width:50%;
+            margin-bottom:2.5rem;
+        }
+        @include desktop-view{
+            width:344px;
+            height:185px;
+
+        }
+    }
+    &__containerMedium{
+        @include desktop-view{
+            display: flex;
+            flex-direction: column;
+            width:100%;
+        }
+
+    }
+    &__upperContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    &__inputTitle{
+        height:3rem;
+        border: 1px solid $lightgrey;
+        border-radius:4px;
+        padding-left:1rem;
+        outline:none;
+        background-color: $superlightgrey;
+    }
+    &__middleContainer{
+        display:flex;
+        flex-direction: column;
+        margin-top:1.5rem;
+        @include tablet-view{
+            padding-bottom:2.5rem;
+            border-bottom: 2px solid $lightgrey;
+        }
+        @include desktop-view{
+            border-bottom: none;
+        }
+    }
+    &__inputDesc{
+        height:9rem;
+        border:1px solid $lightgrey;
+        border-radius: 4px;
+        padding-left:1rem;
+        padding-top:1rem;
+        background-color:$superlightgrey;
+        @include desktop-view{
+            height:94px;
+        }
+    }
+    &__bottomContainer{
+        display:flex;
+        flex-direction: column;
+        margin-top:2rem;
+        @include tablet-view{
+            margin-top:2.5rem;
+            flex-direction:row-reverse;
+            line-height:3rem;
+        }
+    }
+    &__buttonChild{
+        width:100%;
+        background-color: $mainblue;
+        color:white;
+        border:none;
+        border-radius:4px;
+        height:3rem;
+        @include tablet-view{
+            width:10rem;
+            font-size:14px;
+        }
+    }
+    &__cancel{
+        color:$mainblue;
+        font-family:'Avenir-demi';
+        font-size:12px;
+        align-self: center;
+        margin-top:1.5rem;
+        @include tablet-view{
+            margin-right:3rem;
+            margin-top:0;
+            font-size:14px;
+        }
+    }
+}

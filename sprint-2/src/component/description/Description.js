@@ -11,12 +11,12 @@ export class Description extends Component {
                 <div className='description__container--three'>
                 <div className= 'description__container'>
                 <p className='description__author'>By {this.props.mainVideo.channel}</p>
-                <p className='description__date'>{this.props.mainVideo.timestamp}</p>
+                <p className='description__date'>{new Date(this.props.mainVideo.timestamp).toLocaleDateString("en-US")}</p>
                 </div>
                 <div className='description__container--two'>
-                <img src={logoView}/>
+                <img src={logoView} alt=''/>
                 <p className= 'description__num'>{this.props.mainVideo.views}</p>
-                <img src={logoHeart}/>
+                <img src={logoHeart} alt=''/>
                 <p className= 'description__num description__num--right'>{this.props.mainVideo.likes}</p>
                 </div>
                 </div>

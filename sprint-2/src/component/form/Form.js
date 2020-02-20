@@ -8,7 +8,7 @@ export class Form extends Component {
             <section className='form'>
             <p className='form__total'>{this.props.mainVideo.comments.length} Comments</p>
             <div className='form__container'>
-            <img className="form__img" src ={userPic}/>
+            <img className="form__img" src ={userPic} alt='Mohan is the man'/>
             <form className='form__form'>
                 <div className='form__container--two'>
                     <h5 className='form__title'>JOIN THE CONVERSATION</h5>

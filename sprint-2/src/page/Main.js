@@ -10,11 +10,13 @@ import axios from 'axios';
 
 import './Main.scss';
 
-const apiKey = '18d52b96-7ad4-4743-9a1c-c49e20b0def6';
+const apiKey = '18d52b96-7ad4-4743-9a1c-c49e20b0ad2d';
 
 
 class Main extends React.Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state={
     videos:[],
     mainVideo: {
     id:'',
@@ -27,10 +29,35 @@ class Main extends React.Component {
     likes:'',
     duration:'',
     timestamp:'',
-    video:''    
-}
-}
+    video:''       
+}}
+  this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
+  handleSubmit = event =>{
+    event.preventDefault ();
+    if (this.props.match.params.id == undefined){
+      axios.post(`https://project-2-api.herokuapp.com/videos/1af0jruup5gu/comments?api_key=${apiKey}`,
+      {name:'BrainStation TA', comment: event.target.comment.value})
+        .then ((response)=> 
+        axios.get(`https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=${apiKey}`))
+        .then(newresponse => {
+          this.setState({mainVideo: newresponse.data})
+        })
+        //event.target.reset function has to be outside }) 
+        event.target.reset();
+    }else{
+      axios.post(`https://project-2-api.herokuapp.com/videos/${this.state.mainVideo.id}/comments?api_key=${apiKey}`,
+      {name:'BrainStation TA', comment: event.target.comment.value})
+        .then ((response)=> 
+        axios.get(`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=${apiKey}`))
+        .then(newresponse => {
+          this.setState({mainVideo: newresponse.data})
+        })
+        //event.target.reset function has to be outside }) 
+        event.target.reset();
+      }
+    }
 
 
 componentDidMount(){
@@ -39,6 +66,7 @@ componentDidMount(){
   axios.get(`https://project-2-api.herokuapp.com/videos/1af0jruup5gu?api_key=${apiKey}`) 
     .then(response => this.setState({mainVideo: response.data}))
     }
+
 
 componentDidUpdate(){
   if (this.props.match.params.id == undefined && this.state.mainVideo.id!== '1af0jruup5gu'){
@@ -54,14 +82,15 @@ componentDidUpdate(){
 
   render() {
     return (
-      
+        // if (!this.state.mainVideo){
+        //return null;}
         <>
           
           <VideoPlayer mainVideo={this.state.mainVideo}/>
           <div className='desktop__viewParent'>
             <div className ='desktop__viewChildOne'>
               <Description mainVideo={this.state.mainVideo} />
-              <Form mainVideo={this.state.mainVideo} />
+              <Form mainVideo={this.state.mainVideo} comment={this.state.comment}  onSubmit={this.handleSubmit} />
               <CommentChild mainVideo={this.state.mainVideo}/>
             </div>
             <div>

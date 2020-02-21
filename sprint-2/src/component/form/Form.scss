@@ -55,6 +55,7 @@
         width:100%;
         resize:none;
         overflow:hidden;
+        background-color: $superlightgrey;
         @include tablet-view{
             height:3rem;
         }

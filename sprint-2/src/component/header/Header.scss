@@ -37,10 +37,10 @@
         border-radius:4px;
         border: 1.2px solid $lightgrey;
         outline:none;
+        background-color: $superlightgrey;
         background-image: url('../.././assets/Icons/SVG/Icon-search.svg');
         background-position: 1rem .75rem;
         background-repeat: no-repeat;
-        background: $superlightgrey;
         @include tablet-view{
             align-self:center;
         }

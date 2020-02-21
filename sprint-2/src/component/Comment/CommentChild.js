@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import dogPic from '../../.././assets/Images/cute-dog-pic.jpg';
+import dogPic from '../.././assets/Images/cute-dog-pic.jpg';
 import * as timeago from 'timeago.js';
 //used "npm i timeago.js"  to format date
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Header from './component/header/Header.js';
+import Header from './component/Header/Header.js';
 import Main from './page/Main.js';
 import Upload from './page/Upload.js';
 

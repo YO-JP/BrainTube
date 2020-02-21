@@ -3,17 +3,16 @@ import iconPlay from '../.././assets/Icons/SVG/Icon-play.svg';
 import iconVolume from '../.././assets/Icons/SVG/Icon-volume.svg';
 import iconFullscreen from '../.././assets/Icons/SVG/Icon-fullscreen.svg';
 
-import './Videoplayer.scss';
+import './VideoPlayer.scss';
 
 
 
-export class Videoplayer extends Component {
+export class VideoPlayer extends Component {
     render() {
         return (
             <section className='video'>
                 <div className='video__wrapper'>
-                    <video className='video__src' poster={this.props.mainVideo.image}>
-                        <source src={this.props.mainVideo.video}/>
+                    <video className='video__src' poster={this.props.mainVideo.image} src={this.props.mainVideo.video}>
                     </video>
                     <div className='video__controls'>
                         <button className='video__play'><img src={iconPlay} alt='play'/></button>
@@ -31,4 +30,4 @@ export class Videoplayer extends Component {
     }
 }
 
-export default Videoplayer
+export default VideoPlayer

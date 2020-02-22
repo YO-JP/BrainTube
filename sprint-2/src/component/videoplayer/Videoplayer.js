@@ -17,12 +17,13 @@ export class VideoPlayer extends Component {
                     <div className='video__controls'>
                         <button className='video__play'><img src={iconPlay} alt='play'/></button>
                         <div className='video__slider'>
-                        <div className='video__slider--line'></div><p className='video__time'>0:00 / {this.props.mainVideo.duration}</p>
+                            <div className='video__slider--line'></div>
+                            <p className='video__time'>0:00 / {this.props.mainVideo.duration}</p>
                         </div>
-                            <div className='video__right'>
+                        <div className='video__right'>
                             <button className='video__fullscreen'><img src={iconFullscreen} alt='fullscreen'/></button>
                             <button className='video__volume'><img src={iconVolume} alt='volume'/></button>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </section>    

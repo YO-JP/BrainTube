@@ -11,12 +11,16 @@ function Header () {
  
         return (
             <header className='header'>
-             <Link to='/' className='header__logo__parent'><Logo className='header__logo' /></Link>
-             <input className='header__search' placeholder='Search'></input>
-             <div className='header__container'>
-             <Link to='/upload' className='header__button'><button className='header__button'><img className='header__button--icon'src={iconUpload} alt='upload'/> UPLOAD</button></Link>
-             <img className='header__img' src = {userPic} alt='user profile pic'/>
-             </div>
+                <Link to='/' className='header__logo__parent'><Logo className='header__logo' /></Link>
+                <input className='header__search' placeholder='Search'></input>
+                <div className='header__container'>
+                    <Link to='/upload' className='header__button'>
+                        <button className='header__button'>
+                            <img className='header__button--icon'src={iconUpload} alt='upload'/> UPLOAD
+                        </button>
+                    </Link>
+                    <img className='header__img' src = {userPic} alt='user profile pic'/>
+                </div>
             </header>
         )
 }

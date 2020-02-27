@@ -1,0 +1,66 @@
+@import '../.././styles/mixins';
+
+.description{
+    margin:2rem 1rem 2.5rem 1rem;
+    @include tablet-view{
+        margin:3rem 1.5rem 4rem 1.5rem;
+    }
+    &__title{
+        font-size:1.5rem;
+        font-family:'Avenir-bold';
+        @include tablet-view {
+            font-size:2rem;
+        }
+    }
+    &__container--three{
+        @include tablet-view{
+            display:flex;
+            justify-content: space-between;
+            border-bottom: $lightgrey solid 2px;
+            padding-bottom:1.5rem;
+        }
+    }
+    &__container{
+        display:flex;
+        margin-top:1rem;
+        @include tablet-view{
+            margin-top:1.5rem;
+        }
+    }
+    &__author{
+        margin-right:.5rem;
+        font-family:'Avenir-demi';
+    }
+    &__date{
+        color: $darkgrey;
+    }
+    &__container--two{
+        margin-top:2rem;
+        display:flex;
+        @include tablet-view{
+            margin-top:1.5rem;    
+        }
+        @include desktop-view{
+            margin-right:2rem;
+        }
+    }
+    &__num{
+        margin-left:.5rem;
+        margin-right:1.5rem;
+        &--right{
+            margin-right:0;
+        }
+    }
+    &__para{
+        padding-top:1.5rem;
+        margin-top:1.5rem;
+        border-top: $lightgrey solid 2px;
+        @include tablet-view{
+            padding-top:2.5rem;
+            width:70%;
+            font-size:14px;
+            border:none;
+            margin-top:0;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import '/styles/_mixins';
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    line-height:1.5;
+    font-family:'Avenir-reg'
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}

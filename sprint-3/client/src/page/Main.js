@@ -73,13 +73,12 @@ componentDidMount(){
   axios.get('/api/video')
     .then(res => this.setState({videos: res.data}))
   axios.get('/api/video/1af0jruup5gu') 
-    .then(response => this.setState({mainVideo: response.data},console.log('yup')))
+    .then(response => this.setState({mainVideo: response.data}))
     
     }
 
 
 componentDidUpdate(){
-  console.log(this.props.match.params.id === undefined && this.state.mainVideo.id!== '1af0jruup5gu', this.props.match.params.id === this.state.mainVideo.id)
   if (this.props.match.params.id === undefined && this.state.mainVideo.id!== '1af0jruup5gu'){
     axios.get('/api/video/1af0jruup5gu') 
       .then(response => this.setState({mainVideo: response.data}))
@@ -87,11 +86,16 @@ componentDidUpdate(){
   }
   else if(this.props.match.params.id === this.state.mainVideo.id){
     } else{
-      console.log("ran")
       axios.get(`/api/video/${this.props.match.params.id}`)
         .then(newresponse => this.setState({mainVideo: newresponse.data}))
     }
 }
+//Like Function
+handleLike = event =>{
+  event.preventDefault ();
+    axios.put(`/api/video/${this.state.mainVideo.id}/likes`)
+      .then(res => this.setState({mainVideo: res.data}))
+  }
     
 
   render() {
@@ -101,8 +105,8 @@ componentDidUpdate(){
           <VideoPlayer mainVideo={this.state.mainVideo}/>
           <div className='desktop__viewParent'>
             <div className ='desktop__viewChildOne'>
-              <Description mainVideo={this.state.mainVideo} />
-              <Form mainVideo={this.state.mainVideo} onChange={this.handleChange}  onSubmit={this.handleSubmit} />
+              <Description mainVideo={this.state.mainVideo}  onClick={this.handleLike}/>
+              <Form mainVideo={this.state.mainVideo} onChange={this.handleChange}  onSubmit={this.handleSubmit}/>
               <CommentChild mainVideo={this.state.mainVideo}/>
             </div>
             <div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import videoThumbnail from '../assets/Images/Upload-video-preview.jpg'
+import videoThumbnail from '../assets/Images/UZFOMzL.jpeg'
 import './Upload.scss';
 
 //Code Reference for me
@@ -30,6 +30,7 @@ class Upload extends React.Component {
         )
             .then ((response)=> console.log(this.state.title))
             //event.target.reset function has to be outside }) 
+            alert('Upload successfull')
             event.target.reset();
         };
 
@@ -43,7 +44,6 @@ class Upload extends React.Component {
                     [name]: value
                 }
             );
-            console.log(event.target.value)
         }
 
     render (){
@@ -58,11 +58,11 @@ class Upload extends React.Component {
                 </div>
                 <div className="upload__containerMedium">
                     <div className='upload__upperContainer'>
-                        <label for="uploadTitle" className="upload__label">TITLE YOUR VIDEO</label>
+                        <label htmlFor="uploadTitle" className="upload__label">TITLE YOUR VIDEO</label>
                         <input type="text" name="title" placeholder="Add a title to your video" maxLength="50" className='upload__inputTitle' onChange={this.handleInputChange} required></input>
                     </div>
                     <div className='upload__middleContainer'>
-                        <label for="uploadDescription" className="upload__label">ADD A VIDEO DESCRIPTION</label>
+                        <label htmlFor="uploadDescription" className="upload__label">ADD A VIDEO DESCRIPTION</label>
                         <textarea name="description" placeholder="Add a description of your video" maxLength="200" className="upload__inputDesc" onChange={this.handleInputChange} required></textarea>
                     </div>
                 </div>

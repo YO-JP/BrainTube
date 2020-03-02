@@ -4,6 +4,7 @@ import logoHeart from '../.././assets/Icons/SVG/Icon-likes.svg';
 import './Description.scss'
 
 export class Description extends Component {
+
     render() {
         return (
             <section className='description'>
@@ -16,7 +17,7 @@ export class Description extends Component {
                         <div className='description__container--two'>
                             <img src={logoView} alt='views logo'/>
                             <p className= 'description__num'>{this.props.mainVideo.views}</p>
-                            <img src={logoHeart} alt='like logo'/>
+                            <img src={logoHeart} onClick={this.props.onClick} alt='like logo' className='description__likes'/>
                             <p className= 'description__num description__num--right'>{this.props.mainVideo.likes}</p>
                         </div>
                     </div>

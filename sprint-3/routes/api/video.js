@@ -35,19 +35,20 @@ router.post('/', (req,res) => {
     const timeNow = new Date();
     const newTitle= (req.body.uploadDetail).title;
     const newDescription = (req.body.uploadDetail).description;
+    const channelHardCode = "BrainStation"
 
     const newvid ={
         id: staticUUID,
         title: newTitle,
-        channel: "BrainStaion",
-        image: "https://i.imgur.com/l2Xfgpl.jpg"
+        channel: channelHardCode,
+        image: "https://i.imgur.com/UZFOMzL.jpeg"
     }
     videos.push(newvid);
     const newVideo = {
         id: staticUUID,
         title: newTitle,
-        channel: 'BrainStaion',
-        image: 'https://i.imgur.com/l2Xfgpl.jpg',
+        channel: channelHardCode,
+        image: 'https://i.imgur.com/UZFOMzL.jpeg',
         description: newDescription,
         views: '420',
         likes: '69',
@@ -80,6 +81,22 @@ router.post('/', (req,res) => {
     }
     mainvideo.push(newVideo);
     res.json(mainvideo);
-})
+    })
 
-module.exports = router;    
+    //Like Video
+    router.put('/:id/likes', (req,res) => {
+        const targetVideoData =((mainvideo.find(video => video.id ===req.params.id)));
+        const countLike = parseFloat(targetVideoData.likes.replace(",",""))
+        console.log(countLike)
+        const updatedAccount = (countLike+1) 
+        console.log(updatedAccount)
+        const updatedAccountTrue = updatedAccount.toLocaleString('en-US');
+        console.log(updatedAccountTrue);
+
+        targetVideoData.likes = updatedAccountTrue;
+
+        res.json(mainvideo.find(video => video.id === req.params.id));
+    })
+    
+
+module.exports = router;        

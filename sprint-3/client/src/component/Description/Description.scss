@@ -44,6 +44,12 @@
             margin-right:2rem;
         }
     }
+    &__likes{
+        &:hover{
+            transform:scale(1.5);
+        }
+
+    }
     &__num{
         margin-left:.5rem;
         margin-right:1.5rem;
